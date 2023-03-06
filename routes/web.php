@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DocDocumentoController;
+use App\Models\doc_documento;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [DocDocumentoController::class, 'index'])->name('doc_documento.index');
+
+Route::get('/create', [DocDocumentoController::class, 'create'])->name('doc_documento.create');
+
+Route::get('/edit', [DocDocumentoController::class, 'edit'])->name('doc_documento.edit');
