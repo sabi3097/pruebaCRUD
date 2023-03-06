@@ -36,7 +36,8 @@ class TipTipoDocController extends Controller
      */
     public function show(tip_tipo_doc $tip_tipo_doc)
     {
-        //
+        $tip_tipo_doc = tip_tipo_doc::all();
+        return view('create', compact('tip_tipo_doc'));
     }
 
     /**
