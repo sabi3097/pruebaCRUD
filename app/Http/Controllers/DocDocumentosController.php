@@ -36,7 +36,7 @@ class DocDocumentosController extends Controller
      */
     public function show(doc_documentos $doc_documentos)
     {
-        //
+        return view('delete');
     }
 
     /**
@@ -44,7 +44,7 @@ class DocDocumentosController extends Controller
      */
     public function edit(doc_documentos $doc_documentos)
     {
-        //
+        return view('update');
     }
 
     /**
