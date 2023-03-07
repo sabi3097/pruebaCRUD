@@ -22,7 +22,7 @@
             <input type="text" name="doc_codigo" class="form-control" required>
             <br>
             <button class="btn btn-primary">Agregar</button>
-            <a href="{{route("doc_documento.index")}}">Regresar</a>
+            <a href="{{route("doc_documentos.index")}}">Regresar</a>
         </form>
       </p>
     </div>

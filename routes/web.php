@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\DocDocumentoController;
-use App\Models\doc_documento;
+use App\Http\Controllers\DocDocumentosController;
+use App\Http\Controllers\TipTipoDocController;
+use App\Models\doc_documentos;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,8 +17,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', [DocDocumentoController::class, 'index'])->name('doc_documento.index');
+Route::get('/', [DocDocumentosController::class, 'index'])->name('doc_documentos.index');
 
-Route::get('/create', [DocDocumentoController::class, 'create'])->name('doc_documento.create');
+Route::get('/create', [DocDocumentosController::class, 'create'])->name('doc_documentos.create');
 
-Route::get('/edit', [DocDocumentoController::class, 'edit'])->name('doc_documento.edit');
+Route::get('/edit', [DocDocumentosController::class, 'edit'])->name('doc_documentos.edit');
+
+Route::get('/prueba', [TipTipoDocController::class, 'index']);
+

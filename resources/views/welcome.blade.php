@@ -11,11 +11,9 @@
     </h5>
     <div class="card-body">
         <p>
-            <a href="{{route("doc_documento.create")}}" class="btn btn-primary">Agregar registro</a>
+            <a href="{{route("doc_documentos.create")}}" class="btn btn-primary">Agregar registro</a>
         </p>
-        @php
-            print_r($tip_tipo_doc);
-        @endphp
+
       <div class="card-title">Listado de Documentos.</div>
             <div class="table table-responsive">
                 <table class="table table-sm table-bordered">
