@@ -13,6 +13,7 @@
   </head>
   <body>
     <div class="container">
+      <i class="fa-sharp fa-solid fa-trash-can"></i>
       <br><br>
 
         @yield('contenido')

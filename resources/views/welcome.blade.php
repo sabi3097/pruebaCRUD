@@ -39,7 +39,7 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td></td>                              
+                                    <td><span class="fa-duotone fa-trash-can"></span><button class="btn btn-sm btn-danger">eliminar</button></td>                            
                                 </tr> 
                         </tbody>
                     </thead>
