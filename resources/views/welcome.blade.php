@@ -13,6 +13,12 @@
         <p>
             <a href="{{route("doc_documentos.create")}}" class="btn btn-primary">Agregar registro</a>
         </p>
+        @isset($tipo_doc)
+        @php
+            print_r($tipo_doc);
+        @endphp
+        @endisset
+        
 
       <div class="card-title">Listado de Documentos.</div>
             <div class="table table-responsive">

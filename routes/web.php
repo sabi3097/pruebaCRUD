@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\DocDocumentosController;
-use App\Http\Controllers\TipTipoDocController;
+use App\Http\Controllers\TipTipoDocsController;
 use App\Models\doc_documentos;
 use Illuminate\Support\Facades\Route;
 
@@ -23,5 +23,5 @@ Route::get('/create', [DocDocumentosController::class, 'create'])->name('doc_doc
 
 Route::get('/edit', [DocDocumentosController::class, 'edit'])->name('doc_documentos.edit');
 
-Route::get('/prueba', [TipTipoDocController::class, 'index']);
+Route::get('/prueba', [TipTipoDocsController::class, 'index']);
 
