@@ -12,10 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('doc_documentos', function (Blueprint $table) {
-            $table->id('doc_id');
-            $table->string('doc_nombre');
-            $table->integer('doc_codigo');
-            $table->string('doc_contenido');
+            $table->bigIncrements('id');
+            $table->string('doc_nombre', 150);
+            $table->string('doc_codigo', 20);
+            $table->text('doc_contenido', 255);
+            $table->foreignId('pro_procesos_id');
+            $table->foreignId('tip_tipo_id');
             $table->timestamps();
         });
     }

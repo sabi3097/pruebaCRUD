@@ -1,8 +1,6 @@
 <?php
 
 use App\Http\Controllers\DocDocumentosController;
-use App\Http\Controllers\TipTipoDocsController;
-use App\Models\doc_documentos;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,11 +17,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [DocDocumentosController::class, 'index'])->name('doc_documentos.index');
 
-Route::get('/create', [DocDocumentosController::class, 'create'])->name('doc_documentos.create');
+Route::get('/create', function () {
+    $pro_procesos = app()->make(\App\Http\Controllers\ProProcesosController::class)->index()['pro_procesos'];
+    $tipos_docs = app()->make(\App\Http\Controllers\TipTipoDocsController::class)->index()['tipo_docs'];
+    return view('create', ['pro_procesos' => $pro_procesos, 'tipos_docs' => $tipos_docs]);
+})->name('procesos_tipos_documentos.index');
+
+
+Route::post('/store', [DocDocumentosController::class, 'store'])->name('doc_documentos.store');
 
 Route::get('/edit', [DocDocumentosController::class, 'edit'])->name('doc_documentos.edit');
 
 Route::get('/show', [DocDocumentosController::class, 'show'])->name('doc_documentos.show');
 
-//Route::get('/prueba', [TipTipoDocsController::class, 'index']);
+//Route::get('/prueba', [TipTipoDocsController::class, 'index'])->name('tip_tipo_docs.index');
 

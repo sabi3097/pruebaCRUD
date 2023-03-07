@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tip_tipo_docs', function (Blueprint $table) {
-            $table->id('tip_id');
-            $table->string('tip_nombre');
-            $table->string('tip_prefijo');
+            $table->bigIncrements('id');
+            $table->string('tip_nombre', 150);
+            $table->string('tip_prefijo', 4);
             $table->timestamps();
         });
     }

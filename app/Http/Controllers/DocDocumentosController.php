@@ -12,7 +12,9 @@ class DocDocumentosController extends Controller
      */
     public function index()
     {   
-        return view('welcome');
+        $doc_documentos = doc_documentos::all();
+        return view('welcome', compact('doc_documentos'));
+      
     }
 
     /**
@@ -28,7 +30,12 @@ class DocDocumentosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //print_r($_POST);
+        $documentos = new doc_documentos();
+        $documentos-> doc_nombre = $request->post('doc_nombre');
+        $documentos-> doc_contenido = $request->post('doc_contenido');
+        $documentos-> doc_codigo = $request->post('');
+        $documentos-> save();
     }
 
     /**

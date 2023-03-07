@@ -12,7 +12,9 @@ class ProProcesosController extends Controller
      */
     public function index()
     {
-        //
+        $pro_procesos = pro_procesos::all();
+        return ['pro_procesos' => $pro_procesos];
+        //return view('create', compact('pro_procesos'));
     }
 
     /**

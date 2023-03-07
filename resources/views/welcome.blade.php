@@ -11,14 +11,14 @@
     </h5>
     <div class="card-body">
         <p>
-            <a href="{{route("doc_documentos.create")}}" class="btn btn-primary">Agregar registro</a>
+            <a href="{{route("procesos_tipos_documentos.index")}}" class="btn btn-primary">Agregar registro</a>
         </p>
-        @isset($tipo_doc)
-        @php
-            print_r($tipo_doc);
-        @endphp
-        @endisset
-        
+
+        @if ($mensaje = Session::get('success'))
+        <div class="alert alert-success" role="alert">
+            {{$mensaje}}
+          </div>
+        @endif
 
       <div class="card-title">Listado de Documentos.</div>
             <div class="table table-responsive">
@@ -33,14 +33,19 @@
                                 <th>Eliminar</th>
                         </thead>
                         <tbody>
+                            @isset($doc_documentos)
+                                @foreach ($doc_documentos as $item)
                                 <tr>
+                                    <td>{{$item->doc_nombre}}</td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><span class="fa-duotone fa-trash-can"></span><button class="btn btn-sm btn-danger">eliminar</button></td>                            
-                                </tr> 
+                                    <td><button class="btn btn-sm btn-warning">editar</button></td>
+                                    <td><button class="btn btn-sm btn-danger">eliminar</button></td>                            
+                                </tr>                                     
+                                @endforeach
+                            @endisset
+
                         </tbody>
                     </thead>
                 </table>
