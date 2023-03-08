@@ -26,19 +26,15 @@
             </select>
               
             <label for="">Proceso</label>
-            <select name="pro_proceso_id" id="" class="form-control">
+            <select name="pro_procesos_id" id="" class="form-control">
               <option value="">Seleccione un valor..</option>  
                     @foreach ($pro_procesos as $item)
                     <option value="{{$item->id}}">{{$item->pro_prefijo}} - {{$item->pro_nombre}}</option>
                     @endforeach
             </select>
 
-            <label for="">Codigo Documento</label>
-            <input type="text" name="doc_codigo" class="form-control">
-
             <label for="">Contenido del Documento</label>
             <input type="text" name="doc_contenido" class="form-control" value="" required>
-
 
             <br>
             <button class="btn btn-primary">Agregar</button>
