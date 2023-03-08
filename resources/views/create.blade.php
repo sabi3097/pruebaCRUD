@@ -12,9 +12,6 @@
       <p class="card-text">
         <form action="{{route('doc_documentos.store')}}" method="POST">
               @csrf
-
-              @isset($doc_documentos) 
-              @endisset
               
             <label for="">Nombre del Documento</label>
             <input type="text" name="doc_nombre" class="form-control" required>
@@ -23,22 +20,21 @@
             <label for="">Tipo de documento</label>
             <select name="tip_tipo_docs_id" id="" class="form-control">
                 <option value="">Seleccione un valor..</option>
-                  @if(isset($tip_tipos_docs))
                       @foreach($tip_tipos_docs as $item)
                           <option value="{{ $item->id }}">{{ $item->tip_prefijo }} - {{ $item->tip_nombre }}</option>
                       @endforeach
-                  @endif
             </select>
               
             <label for="">Proceso</label>
             <select name="pro_proceso_id" id="" class="form-control">
-              <option value="">Seleccione un valor..</option>
-                 @if(@isset($pro_procesos))
+              <option value="">Seleccione un valor..</option>  
                     @foreach ($pro_procesos as $item)
                     <option value="{{$item->id}}">{{$item->pro_prefijo}} - {{$item->pro_nombre}}</option>
                     @endforeach
-                 @endif
             </select>
+
+            <label for="">Codigo Documento</label>
+            <input type="text" name="doc_codigo" class="form-control">
 
             <label for="">Contenido del Documento</label>
             <input type="text" name="doc_contenido" class="form-control" value="" required>

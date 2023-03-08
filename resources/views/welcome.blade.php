@@ -39,9 +39,19 @@
                                         <td>{{$item->doc_nombre}}</td>                                                            
                                         <td>{{$item->pro_procesos->pro_nombre}}</td>
                                         <td>{{$item->tip_tipo_docs->tip_nombre}}</td>
-                                        <td></td>
-                                        <td><button class="btn btn-sm btn-warning">editar</button></td>
-                                        <td><button class="btn btn-sm btn-danger">eliminar</button></td>                            
+                                        <td>{{$item->doc_codigo}}</td>
+                                        <td>                                            
+                                            <form action="{{route("update_documentos.edit", $item->id)}}" method="GET">
+                                                <button class="btn btn-sm btn-warning">
+                                                    EDITAR
+                                                </button>
+                                            </form>
+                                        </td>                                          
+                                        <td>
+                                            <form action="" method="GET">
+                                                <a class="btn btn-sm btn-danger">ELIMINAR</a>     
+                                            </form>                                            
+                                        </td>                            
                                     </tr>                                     
                                 @endforeach
                             @endisset
