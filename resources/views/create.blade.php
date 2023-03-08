@@ -21,7 +21,7 @@
 
           
             <label for="">Tipo de documento</label>
-            <select name="tip_tipo_id" id="" class="form-control">
+            <select name="tip_tipo_docs_id" id="" class="form-control">
                 <option value="">Seleccione un valor..</option>
                   @if(isset($tip_tipos_docs))
                       @foreach($tip_tipos_docs as $item)

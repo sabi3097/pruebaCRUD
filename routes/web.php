@@ -19,8 +19,8 @@ Route::get('/', [DocDocumentosController::class, 'index'])->name('doc_documentos
 
 Route::get('/create', function () {
     $pro_procesos = app()->make(\App\Http\Controllers\ProProcesosController::class)->index()['pro_procesos'];
-    $tipos_docs = app()->make(\App\Http\Controllers\TipTipoDocsController::class)->index()['tipo_docs'];
-    return view('create', ['pro_procesos' => $pro_procesos, 'tipos_docs' => $tipos_docs]);
+    $tip_tipos_docs = app()->make(\App\Http\Controllers\TipTipoDocsController::class)->index()['tip_tipo_docs'];
+    return view('create', ['pro_procesos' => $pro_procesos, 'tip_tipos_docs' => $tip_tipos_docs]);
 })->name('procesos_tipos_documentos.index');
 
 
