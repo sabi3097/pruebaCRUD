@@ -47,9 +47,10 @@ class DocDocumentosController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(doc_documentos $doc_documentos)
+    public function show($id)
     {
-        return view('delete');
+        $show_documentos = doc_documentos::find($id);
+        return view('delete', compact('show_documentos'));
     }
 
     /**
@@ -80,8 +81,10 @@ class DocDocumentosController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(doc_documentos $doc_documentos)
+    public function destroy($id)
     {
-        //
+        $delete_documentos = doc_documentos::find($id);
+        $delete_documentos->delete();
+        return redirect()->route('doc_documentos.index')->with("success", "Eliminado Satisfactoriamente!");
     }
 }

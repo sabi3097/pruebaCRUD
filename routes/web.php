@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::get('/', [DocDocumentosController::class, 'index'])->name('doc_documentos.index');
 
 Route::get('/create', function () {
@@ -23,7 +22,7 @@ Route::get('/create', function () {
     return view('create', ['pro_procesos' => $pro_procesos, 'tip_tipos_docs' => $tip_tipos_docs]);
 })->name('procesos_tipos_documentos.index');
 
-Route::get('/store', [DocDocumentosController::class, 'store'])->name('doc_documentos.store');
+Route::post('/store', [DocDocumentosController::class, 'store'])->name('doc_documentos.store');
 
 Route::get("/edit/{id}", function($id){
     $doc_documentos =app()->make(\App\Http\Controllers\DocDocumentosController::class)->index()['doc_documentos'];
@@ -36,9 +35,11 @@ Route::get("/edit/{id}", function($id){
 
 Route::put('/update/{id}', [DocDocumentosController::class, 'update'])->name('doc_documentos.update');
 
-Route::get('/show', function(){
-    $doc_documentos =app()->make(\App\Http\Controllers\DocDocumentosController::class)->index()['doc_documentos'];
-    return view('delete', ['doc_documentos' => $doc_documentos]);
+Route::get('/show/{id}', function($id){
+    $show_documentos =app()->make(\App\Http\Controllers\DocDocumentosController::class)->show($id)['show_documentos'];
+    return view('delete', ['show_documentos' => $show_documentos]);
 })->name('show_documentos.show');
+
+Route::delete('/destroy/{id}', [DocDocumentosController::class, 'destroy'])->name('doc_documentos.destroy');
 
 

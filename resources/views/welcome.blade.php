@@ -48,8 +48,10 @@
                                             </form>
                                         </td>                                          
                                         <td>
-                                            <form action="" method="GET">
-                                                <a class="btn btn-sm btn-danger">ELIMINAR</a>     
+                                            <form action="{{route("show_documentos.show", $item->id)}}" method="get">
+                                                <button class="btn btn-sm btn-danger">
+                                                    ELIMINAR
+                                                </button>     
                                             </form>                                            
                                         </td>                            
                                     </tr>                                     
