@@ -30,5 +30,5 @@ Route::get('/edit', [DocDocumentosController::class, 'edit'])->name('doc_documen
 
 Route::get('/show', [DocDocumentosController::class, 'show'])->name('doc_documentos.show');
 
-//Route::get('/prueba', [TipTipoDocsController::class, 'index'])->name('tip_tipo_docs.index');
+//Route::get('/prueba', [DocDocumentosController::class, 'index'])->name('tip_tipo_docs.index');
 

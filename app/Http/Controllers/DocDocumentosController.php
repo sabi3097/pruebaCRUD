@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\doc_documentos;
 use Illuminate\Http\Request;
+use App\Models\pro_procesos;
 
 class DocDocumentosController extends Controller
 {
@@ -12,8 +13,9 @@ class DocDocumentosController extends Controller
      */
     public function index()
     {   
-        $doc_documentos = doc_documentos::all();
-        return view('welcome', compact('doc_documentos'));
+        $doc_documentos = doc_documentos::with('pro_procesos')->get();
+       // dd($doc_documentos);
+        return view('welcome', ['doc_documentos' => $doc_documentos]);
       
     }
 

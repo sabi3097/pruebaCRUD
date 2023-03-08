@@ -35,14 +35,14 @@
                         <tbody>
                             @isset($doc_documentos)
                                 @foreach ($doc_documentos as $item)
-                                <tr>
-                                    <td>{{$item->doc_nombre}}</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><button class="btn btn-sm btn-warning">editar</button></td>
-                                    <td><button class="btn btn-sm btn-danger">eliminar</button></td>                            
-                                </tr>                                     
+                                    <tr>
+                                        <td>{{$item->doc_nombre}}</td>                                                            
+                                        <td>{{$item->pro_procesos->pro_nombre}}</td>
+                                        <td>{{$item->tip_tipo_docs->tip_nombre}}</td>
+                                        <td></td>
+                                        <td><button class="btn btn-sm btn-warning">editar</button></td>
+                                        <td><button class="btn btn-sm btn-danger">eliminar</button></td>                            
+                                    </tr>                                     
                                 @endforeach
                             @endisset
 

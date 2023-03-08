@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('doc_codigo', 20);
             $table->text('doc_contenido', 255);
             $table->foreignId('pro_procesos_id');
-            $table->foreignId('tip_tipo_id');
+            $table->foreignId('tip_tipo_docs_id');
             $table->timestamps();
         });
     }

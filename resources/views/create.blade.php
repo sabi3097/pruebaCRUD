@@ -23,8 +23,8 @@
             <label for="">Tipo de documento</label>
             <select name="tip_tipo_id" id="" class="form-control">
                 <option value="">Seleccione un valor..</option>
-                  @if(isset($tipos_docs))
-                      @foreach($tipos_docs as $item)
+                  @if(isset($tip_tipos_docs))
+                      @foreach($tip_tipos_docs as $item)
                           <option value="{{ $item->id }}">{{ $item->tip_prefijo }} - {{ $item->tip_nombre }}</option>
                       @endforeach
                   @endif
